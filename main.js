@@ -6,7 +6,7 @@ function getComputerChoice() {
     } else if (choice == 1) {
         return 'Paper';
     } else {
-        return "Scizzors";
+        return "Scissors";
     }
 }
 
@@ -30,7 +30,7 @@ function playGame(){
         }
         if (humanChoice === computerChoice) {
             lastTurn = `${humanChoice} vs ${computerChoice} : It's a draw!`
-        } else if ((humanChoice === 'Rock' && computerChoice === 'Scizzors') || (humanChoice === 'Paper' && computerChoice === 'Rock') || (humanChoice === 'Scizzors' && computerChoice === 'Paper')) {
+        } else if ((humanChoice === 'Rock' && computerChoice === 'Scissors') || (humanChoice === 'Paper' && computerChoice === 'Rock') || (humanChoice === 'Scissors' && computerChoice === 'Paper')) {
             humanScore += 1;
             lastTurn = `${humanChoice} vs ${computerChoice} : You get a point!`
         } else {
@@ -79,8 +79,8 @@ function playGame(){
     paperButton.textContent = 'Paper';
     paperButton.addEventListener('click', () => {playRound('Paper',getComputerChoice())});
     const scizzorsButton = document.createElement('button');
-    scizzorsButton.textContent = 'Scizzors';
-    scizzorsButton.addEventListener('click', () => {playRound('Scizzors',getComputerChoice())});
+    scizzorsButton.textContent = 'Scissors';
+    scizzorsButton.addEventListener('click', () => {playRound('Scissors',getComputerChoice())});
 
     body.appendChild(rockButton);
     body.appendChild(paperButton);
